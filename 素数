@@ -1,0 +1,38 @@
+#include<stdio.h>
+#include<stdbool.h>
+#include<math.h>
+
+bool isPrime(int n){
+	if(n<=1) return false;
+    if(n%2==0) return false;
+    if(n==2) return true;
+    for(int i=3;i*i<=n;i+=2){
+        if(n%i==0) return false;
+    }
+    return true;
+}
+bool isPalindrome(int n){
+    int ori=n;
+    int rev=0;
+    while(n>0){
+        rev=rev*10+(n%10);
+        n/=10;
+    }
+    return ori==rev;
+}
+int main(){
+	long long n;
+    for(int i=0;i<5;i++){
+        scanf("%lld",&n);
+        if(isPrime(n) && isPalindrome(n)){
+            printf("Yes\n");
+        }
+        else if(n>99999){
+            printf("No\n");
+        }
+        else{
+            printf("No\n");
+        }
+    }
+    return 0;
+}
