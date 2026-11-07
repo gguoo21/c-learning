@@ -11,6 +11,7 @@ bool isPrime(int n){
     }
     return true;
 }
+//运用函数判断是否为素数
 bool isPalindrome(int n){
     int ori=n;
     int rev=0;
@@ -20,6 +21,7 @@ bool isPalindrome(int n){
     }
     return ori==rev;
 }
+//运用函数判断是否为对称数
 int main(){
 	long long n;
     for(int i=0;i<5;i++){
