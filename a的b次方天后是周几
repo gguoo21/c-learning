@@ -1,0 +1,45 @@
+#include<stdio.h>
+int Res(int a,int b,int m){
+    int res=1;
+    while(b>0){
+        if(b%2==1){
+            res=(res*a)%m;
+        }
+        a=(a*a)%m;
+        b/=2;
+    }
+    return res;
+}
+//利用快速幂和同余分配律计算余数
+//写出b的二进制写法，如果位是1，则计入res（余数），否则不计。
+
+int main(){
+    int a,b;
+    printf("Please input a and b:");
+    scanf("%d %d",&a,&b);
+    int res=Res(a,b,7);
+    switch(res){
+        case 0:
+            printf("Sunday");
+            break;
+        case 1:
+            printf("Monday");
+            break;
+        case 2:
+            printf("Tuesday");
+            break;
+        case 3:
+            printf("Wednesday");
+            break;
+        case 4:
+            printf("Thursday");
+            break;
+        case 5:
+            printf("Friday");
+            break;
+        case 6:
+            printf("Saturday");
+            break;
+    }
+    return 0;
+}
